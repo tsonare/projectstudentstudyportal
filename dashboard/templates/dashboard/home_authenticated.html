@@ -1,0 +1,92 @@
+{% extends 'dashboard/base.html' %} 
+{% load static %} 
+{% block home %}
+
+<section class="container text-center">
+  <h3>Student Study Portal </h3>
+  <hr> <br>
+  <div class="row">
+    <div class="col-md-3">
+      <a href="{% url 'notes' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/note.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h3 class="card-title ">
+              Notes
+            </h3>
+            Create your Notes.
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-3">
+      <a href="{% url 'homework' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/homework.jpeg' %}" alt="homework image">
+          <div class="card-body">
+            <h3 class="card-title ">
+              Homework
+            </h3>
+             Do your homework
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="{% url 'todo' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/todos.jpg' %}" alt="todo image">
+          <div class="card-body">
+            <h3 class="card-title ">
+              To Do
+            </h3>
+            Add your To Do Activities
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="{% url 'youtube' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/youtube.gif' %}" alt="youtube image">
+          <div class="card-body">
+            <h3 class="card-title ">
+              Youtube
+            </h3>
+            Search On Youtube
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="col-md-3"><br><br><br>
+      <a href="{% url 'wikipedia' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/wikipedia.gif' %}" alt="wikipedia image">
+          <div class="card-body">
+            <h3 class="card-title ">
+              Wikipedia
+            </h3>
+            Search On Wikipedia 
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3"><br><br><br>
+      <a href="{% url 'dictionary' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/dictionary.gif' %}" alt="dictionary image">
+          <div class="card-body">
+            <h3 class="card-title ">
+              Dictionary
+            </h3>
+             Search On Dictionary 
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock home %}

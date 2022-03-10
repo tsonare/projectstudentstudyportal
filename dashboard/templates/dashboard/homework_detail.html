@@ -1,0 +1,33 @@
+{% extends 'dashboard/base.html' %} 
+{% load static %} 
+{% block content %}
+
+<section class='text-center container'>
+
+    <div class="container">
+        <div class="content-section p-0 mt-5">
+            <div class="m-3">
+                <h2>Subject:- {{homework.subject}}</h2>
+                <h4>Title:- {{homework.title}}</h4>
+            </div>
+
+            <hr class="p-0 m-0">
+            <p class="description m-5 p-5">
+            {{homework.description}}
+            </p>
+            <h6>Due-date:- {{homework.due_date}}</h6>
+            <h6>Homework status:- {{homework.status}}</h6>
+            <div class="form-group">
+            <button href = "" class="btn btn-outline-info" type="submit" >
+                <a href = "{% url 'update_homework' homework.id %}" style="color:grey;"> Edit Homework </a>
+            </button>
+            <button href = "" class="btn btn-outline-info" type="submit">
+             <a href="{% url 'delete_homework' homework.id %}" style="color:grey;"> Delete Homework </a>
+            </button>
+        </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock content %}

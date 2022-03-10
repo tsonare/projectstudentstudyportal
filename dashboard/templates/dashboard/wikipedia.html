@@ -1,0 +1,34 @@
+{% extends 'dashboard/base.html' %} 
+{% load static %} 
+{% block content %}
+
+<section class='text-center container'>
+    <h2>Search On Wikipedia</h2><br>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input class="btn btn-danger" type="submit" value="Search">
+    </form>
+<br>
+<h4> Note: After Searching Click on Link If you want to see on wikipedia </h4> 
+<div class="container">
+    <div class="content-section p-0 mt-5">
+        <a href="{{result.url}}" class="p-0 m-0" target="_blank">
+            <div class="custom-header">
+                <h2>{{result.title}}</h6>
+            </div>
+        </a>
+
+        <hr class="p-0 m-0">
+        <section class='text-justify container'>
+        <p class="description m-5 p-5">
+            {{result.summary}}
+        </p>
+        </section>
+        <hr>
+    </div>
+</div>
+
+</section>
+
+{% endblock content %}
