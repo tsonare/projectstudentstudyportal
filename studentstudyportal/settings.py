@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "django.contrib.sites",
     "django_celery_results",
+    "rest_framework",
 ]
 
 SITE_ID = 1
@@ -152,6 +153,7 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 ACCOUNT_EMAIL_VERIFICATION = "none"
 
 # CELERY STUFF
+
 CELERY_BROKER_URL = os.environ.get("CELERY_BROKER", "redis://localhost:6379")
 CELERY_RESULT_BACKEND = os.environ.get("CELERY_BACKEND", "redis://localhost:6379")
 if CELERY_RESULT_BACKEND == "django-db":
@@ -161,5 +163,9 @@ CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = "Asia/Kolkata"
 
-# REDIS_HOST = 'localhost'
-# REDIS_PORT = 6379
+# Django rest framework
+
+REST_FRAMEWORK = {
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 20,
+}
