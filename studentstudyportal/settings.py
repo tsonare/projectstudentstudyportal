@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "django_celery_results",
     "rest_framework",
+    "rest_framework.authtoken",
+    # 'rest_auth',
+    "API",
 ]
 
 SITE_ID = 1
@@ -154,14 +157,14 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 
 # CELERY STUFF
 
-CELERY_BROKER_URL = os.environ.get("CELERY_BROKER", "redis://localhost:6379")
-CELERY_RESULT_BACKEND = os.environ.get("CELERY_BACKEND", "redis://localhost:6379")
-if CELERY_RESULT_BACKEND == "django-db":
-    INSTALLED_APPS += ["django_celery_results"]
-CELERY_ACCEPT_CONTENT = ["application/json"]
-CELERY_TASK_SERIALIZER = "json"
-CELERY_RESULT_SERIALIZER = "json"
-CELERY_TIMEZONE = "Asia/Kolkata"
+# CELERY_BROKER_URL = os.environ.get("CELERY_BROKER", "redis://localhost:6379")
+# CELERY_RESULT_BACKEND = os.environ.get("CELERY_BACKEND", "redis://localhost:6379")
+# if CELERY_RESULT_BACKEND == "django-db":
+#     INSTALLED_APPS += ["django_celery_results"]
+# CELERY_ACCEPT_CONTENT = ["application/json"]
+# CELERY_TASK_SERIALIZER = "json"
+# CELERY_RESULT_SERIALIZER = "json"
+# CELERY_TIMEZONE = "Asia/Kolkata"
 
 # Django rest framework
 
@@ -169,3 +172,11 @@ REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 20,
 }
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",  # <-- And here
+    ],
+}
+
+# Generated token 6c02ad32e72519bffaf2730333b598b2c6e4a60c for user tanuj

@@ -52,8 +52,8 @@ class NoteCreateView(SuccessMessageMixin, CreateView):
 
 
 class NoteDisplayView(ListView):
-    model = Note
     paginate_by = 12
+    model = Note
     template_name = "dashboard/notes_display.html"
 
     def get_context_data(self, **kwargs):
