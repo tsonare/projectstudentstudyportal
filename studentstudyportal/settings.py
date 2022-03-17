@@ -177,6 +177,9 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.TokenAuthentication",  # <-- And here
     ],
+    #  'DEFAULT_PERMISSION_CLASSES': (
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ),
 }
 
 # Generated token 6c02ad32e72519bffaf2730333b598b2c6e4a60c for user tanuj

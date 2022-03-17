@@ -2,6 +2,13 @@ from rest_framework import serializers
 from dashboard.models import Note, Homework, Todo
 
 
+# class UserSerializer(serializers.ModelSerializer):
+
+#     class Meta:
+#         model = User
+#         fields = ['username', 'password']
+
+
 class NoteSerializer(serializers.ModelSerializer):
     user = serializers.CharField(source="user.username", read_only=True)
 
@@ -15,7 +22,7 @@ class HomeworkSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Homework
-        fields = ["user", "subject", "title", "description", "status"]
+        fields = ["id", "user", "subject", "title", "description", "status"]
 
 
 class TodoSerializer(serializers.ModelSerializer):
@@ -23,4 +30,4 @@ class TodoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Todo
-        fields = ["user", "title", "todo_status"]
+        fields = ["id", "user", "title", "todo_status"]
