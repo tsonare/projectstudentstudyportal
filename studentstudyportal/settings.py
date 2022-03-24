@@ -46,9 +46,11 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "django_celery_results",
     "rest_framework",
-    "rest_framework.authtoken",
+    # "rest_framework.authtoken",
     # 'rest_auth',
     "API",
+    "rest_framework_simplejwt",
+    "drf_yasg",
 ]
 
 SITE_ID = 1
@@ -155,7 +157,7 @@ AUTHENTICATION_BACKENDS = [
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 ACCOUNT_EMAIL_VERIFICATION = "none"
 
-# CELERY STUFF
+# CELERY settings
 
 # CELERY_BROKER_URL = os.environ.get("CELERY_BROKER", "redis://localhost:6379")
 # CELERY_RESULT_BACKEND = os.environ.get("CELERY_BACKEND", "redis://localhost:6379")
@@ -174,12 +176,35 @@ REST_FRAMEWORK = {
 }
 
 REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.TokenAuthentication",
-    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    )
+    # "DEFAULT_AUTHENTICATION_CLASSES": [
+    #     "rest_framework.authentication.TokenAuthentication",
+    # ],
     # 'DEFAULT_PERMISSION_CLASSES': (
     #     'rest_framework.permissions.IsAuthenticated',
     # ),
 }
 
-# Generated token 6c02ad32e72519bffaf2730333b598b2c6e4a60c for user tanuj
+# Generated token for token authentication 6c02ad32e72519bffaf2730333b598b2c6e4a60c for user tanuj
+
+# JWT settings for time
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=120),
+}
+
+# swagger settings
+
+SWAGGER_SETTINGS = {
+'SECURITY_DEFINITIONS': {
+    'Use JWT access token using Bearer': {
+        'type': 'apiKey',
+        'in': 'header',
+        'name': 'Authorization'
+    }
+    }
+}
