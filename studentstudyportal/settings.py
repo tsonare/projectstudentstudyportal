@@ -105,12 +105,12 @@ WSGI_APPLICATION = "studentstudyportal.wsgi.application"
 
 DATABASES = {
    'default': {
-       'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       'NAME': os.environ['NAME'],
-       'USER': os.environ['USER'],
-       'PASSWORD': os.environ['PASSWORD'],
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'studentstudyportal',
+       'USER': 'postgres',
+       'PASSWORD': 'developer',
        'HOST': ["studentstudyportal1910.herokuapp.com", "localhost"],
-       'PORT': '5432',
+       'PORT': 5432,
    }
 }
 
@@ -150,14 +150,14 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-# STATIC_ROOT = BASE_DIR / "static"
+STATIC_ROOT = BASE_DIR / "static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFIELS_DIRS = [os.path.join(BASE_DIR, "dashboard/static")]
 
 LOGIN_REDIRECT_URL = "home_authenticated"
