@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     "API",
     "rest_framework_simplejwt",
     "drf_yasg",
-    'whitenoise.runserver_nostatic',
 ]
 
 SITE_ID = 1
