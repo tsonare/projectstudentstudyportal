@@ -106,11 +106,11 @@ WSGI_APPLICATION = "studentstudyportal.wsgi.application"
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'studentstudyportal',
-       'USER': 'postgres',
-       'PASSWORD': 'developer',
+       'NAME': os.environ['NAME'],
+       'USER': os.environ['USER'],
+       'PASSWORD': os.environ['PASSWORD'],
        'HOST': ["studentstudyportal1910.herokuapp.com", "localhost"],
-       'PORT': 5432,
+       'PORT': '5432',
    }
 }
 
