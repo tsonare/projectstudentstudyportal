@@ -110,7 +110,7 @@ DATABASES = {
        'USER': os.environ['USER'],
        'PASSWORD': os.environ['PASSWORD'],
        'HOST': ["studentstudyportal1910.herokuapp.com", "localhost"],
-       'PORT': '5432',
+       'PORT': 5432,
    }
 }
 
