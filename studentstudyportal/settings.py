@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "API",
     "rest_framework_simplejwt",
     "drf_yasg",
+    'whitenoise.runserver_nostatic',
 ]
 
 SITE_ID = 1
@@ -110,7 +111,7 @@ DATABASES = {
        'USER': os.environ['USER'],
        'PASSWORD': os.environ['PASSWORD'],
        'HOST': ["studentstudyportal1910.herokuapp.com", "localhost"],
-       'PORT': 5432,
+       'PORT': '5432',
    }
 }
 
