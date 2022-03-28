@@ -28,9 +28,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-ay-2ka(=3z%muozv4v^ba
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+ALLOWED_HOSTS = ["studentstudyportal1910.herokuapp.com", "127.0.0.1"]
 
-ALLOWED_HOSTS = ["studentstudyportal1910.herokuapp.com", "localhost"]
+DEBUG = os.environ.get("DEBUG", True)
+
+
 
 # if DEBUG==False:
 #     ALLOWED_HOSTS = ["studentstudyportal1910.herokuapp.com"]
@@ -115,13 +117,14 @@ WSGI_APPLICATION = "studentstudyportal.wsgi.application"
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'studentstudyportal',
-       'USER': 'postgres',
-       'PASSWORD': 'developer',
-       'HOST': "localhost",
-       'PORT': '5432',
+       'NAME': 'dalb9l8gf6hd7r',
+       'USER': 'fgwmxcophwrowt',
+       'PASSWORD': 'f6460762952378e143e4135b62c61c15afa773418f0a25461a1c1ae8db4f20d4',
+       'HOST': "ec2-18-214-134-226.compute-1.amazonaws.com",
+       'PORT': 5432,
    }
 }
+# postgres://fgwmxcophwrowt:f6460762952378e143e4135b62c61c15afa773418f0a25461a1c1ae8db4f20d4@ec2-18-214-134-226.compute-1.amazonaws.com:5432/dalb9l8gf6hd7r
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
