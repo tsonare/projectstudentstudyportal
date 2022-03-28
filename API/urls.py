@@ -43,6 +43,3 @@ urlpatterns = [
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
-
-#  "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MDIxNzE4LCJpYXQiOjE2NDgwMjE0MTgsImp0aSI6IjFjOGQ3NmM5NmIxOTQzY2JhNGU3MjlmMGNlODQ0MGM4IiwidXNlcl9pZCI6MX0.LUYLMTiLubgveoGas8PyBwx3IJcZJTPEwAEI1EuL6jU",
-#  "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0ODEwNzgxOCwiaWF0IjoxNjQ4MDIxNDE4LCJqdGkiOiJlZmZiMjFlZWY1Y2Y0OTk5YjE0MzUyZGE3MjVmZGJhNyIsInVzZXJfaWQiOjF9.rY56acNnlaUjeW-5f3PHDPhy1mYVs51UfBHCvoZr2cw"

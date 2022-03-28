@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+
+from distutils.debug import DEBUG
 from pathlib import Path
 import os
 import dj_database_url
@@ -22,13 +24,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-ay-2ka(=3z%muozv4v^bay37+5mt2a^!^)fj)$f#x(imiyh0!i")
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = False
 
 ALLOWED_HOSTS = ["studentstudyportal1910.herokuapp.com", "localhost"]
 
+# if DEBUG==False:
+#     ALLOWED_HOSTS = ["studentstudyportal1910.herokuapp.com"]
+
+#     if DEBUG==True:
+#         ALLOWED_HOSTS = ["localhost"]
 
 # Application definition
 
@@ -229,6 +237,7 @@ SWAGGER_SETTINGS = {
     }
 }
 
+CSRF_TRUSTED_ORIGINS = ["https://studentstudyportal1910.herokuapp.com"]
 
 # https://studentstudyportal1910.herokuapp.com/ | https://git.heroku.com/studentstudyportal1910.git
 # set git remote heroku to https://git.heroku.com/studentstudyportal1910.git
