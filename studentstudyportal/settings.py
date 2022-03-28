@@ -218,6 +218,8 @@ REST_FRAMEWORK = {
     # ),
 }
 
+# for https response in api
+
 USE_X_FORWARDED_HOST = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
