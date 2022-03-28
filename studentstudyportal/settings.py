@@ -229,7 +229,7 @@ SIMPLE_JWT = {
 
 SWAGGER_SETTINGS = {
 'SECURITY_DEFINITIONS': {
-    'Use JWT access token using Bearer': {
+    'JWT': {
         'type': 'apiKey',
         'in': 'header',
         'name': 'Authorization'
@@ -237,7 +237,7 @@ SWAGGER_SETTINGS = {
     }
 }
 
-CSRF_TRUSTED_ORIGINS = ["https://studentstudyportal1910.herokuapp.com"]
+# CSRF_TRUSTED_ORIGINS = ["https://studentstudyportal1910.herokuapp.com"]
 
 # https://studentstudyportal1910.herokuapp.com/ | https://git.heroku.com/studentstudyportal1910.git
 # set git remote heroku to https://git.heroku.com/studentstudyportal1910.git
