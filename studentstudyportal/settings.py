@@ -124,7 +124,7 @@ DATABASES = {
        'PORT': 5432,
    }
 }
-# postgres://fgwmxcophwrowt:f6460762952378e143e4135b62c61c15afa773418f0a25461a1c1ae8db4f20d4@ec2-18-214-134-226.compute-1.amazonaws.com:5432/dalb9l8gf6hd7r
+# postgres://user:-fgwmxcophwrowt:password:-f6460762952378e143e4135b62c61c15afa773418f0a25461a1c1ae8db4f20d4@ Host:-ec2-18-214-134-226.compute-1.amazonaws.com: Port-5432/Name:- dalb9l8gf6hd7r
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
@@ -217,6 +217,9 @@ REST_FRAMEWORK = {
     #     'rest_framework.permissions.IsAuthenticated',
     # ),
 }
+
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Generated token for token authentication 6c02ad32e72519bffaf2730333b598b2c6e4a60c for user tanuj
 
