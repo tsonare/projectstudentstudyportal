@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres_main:
-        image: projectstudentstudyportal_app_1
+        image: projectstudentstudyportal_app
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
