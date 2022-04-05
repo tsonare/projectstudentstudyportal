@@ -1,7 +1,13 @@
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-from .serializers import NoteSerializer, HomeworkSerializer, TodoSerializer, SubjectSerializer
+from .serializers import (
+    NoteSerializer,
+    HomeworkSerializer,
+    TodoSerializer,
+    SubjectSerializer,
+)
 from dashboard.models import Note, Homework, Subject, Todo
+
 # from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework_simplejwt.authentication import JWTAuthentication
@@ -17,7 +23,7 @@ class NoteViewSet(viewsets.ModelViewSet):
     # authentication_classes = [TokenAuthentication]
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticatedOrReadOnly]
-    parser_classes = (FormParser,MultiPartParser)
+    parser_classes = (FormParser, MultiPartParser)
 
     # def create(self, request, *args, **kwargs):
     #     serializer = self.get_serializer(data=request.data)
@@ -45,7 +51,7 @@ class SubjectViewSet(viewsets.ModelViewSet):
     # authentication_classes = [TokenAuthentication]
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticatedOrReadOnly]
-    parser_classes = (FormParser,MultiPartParser)
+    parser_classes = (FormParser, MultiPartParser)
 
 
 class HomeworkViewSet(viewsets.ModelViewSet):
@@ -54,7 +60,7 @@ class HomeworkViewSet(viewsets.ModelViewSet):
     # authentication_classes = [TokenAuthentication]
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticatedOrReadOnly]
-    parser_classes = (FormParser,MultiPartParser)
+    parser_classes = (FormParser, MultiPartParser)
 
 
 class TodoViewSet(viewsets.ModelViewSet):
@@ -63,4 +69,4 @@ class TodoViewSet(viewsets.ModelViewSet):
     # authentication_classes = [TokenAuthentication]
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticatedOrReadOnly]
-    parser_classes = (FormParser,MultiPartParser)
+    parser_classes = (FormParser, MultiPartParser)

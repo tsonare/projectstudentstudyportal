@@ -16,11 +16,9 @@ class NoteSerializer(serializers.ModelSerializer):
 
 
 class SubjectSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Subject
         fields = ["id", "subject"]
-
 
 
 class HomeworkSerializer(serializers.ModelSerializer):

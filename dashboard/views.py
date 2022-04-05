@@ -52,7 +52,7 @@ class NoteCreateView(SuccessMessageMixin, CreateView):
 
 
 class NoteDisplayView(ListView):
-    paginate_by = 12
+    # paginate_by = 12
     model = Note
     template_name = "dashboard/notes_display.html"
 
@@ -114,7 +114,6 @@ class HomeworkCreateView(SuccessMessageMixin, CreateView):
 
 class HomeworkDisplayView(ListView):
     model = Homework
-    paginate_by = 12
     template_name = "dashboard/homework_display.html"
 
     def get_context_data(self, **kwargs):
@@ -172,7 +171,6 @@ class TodoCreateView(SuccessMessageMixin, CreateView):
 
 class TodoDisplayView(ListView):
     model = Todo
-    paginate_by = 20
     template_name = "dashboard/todo_display.html"
 
     def get_context_data(self, **kwargs):

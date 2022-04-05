@@ -24,14 +24,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-ay-2ka(=3z%muozv4v^bay37+5mt2a^!^)fj)$f#x(imiyh0!i")
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY", "django-insecure-ay-2ka(=3z%muozv4v^bay37+5mt2a^!^)fj)$f#x(imiyh0!i"
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = ["studentstudyportal1910.herokuapp.com", "127.0.0.1"]
 
 DEBUG = os.environ.get("DEBUG", True)
-
 
 
 # if DEBUG==False:
@@ -115,19 +116,22 @@ WSGI_APPLICATION = "studentstudyportal.wsgi.application"
 # Settings for Database Postgres
 
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'dalb9l8gf6hd7r',
-       'USER': 'fgwmxcophwrowt',
-       'PASSWORD': 'f6460762952378e143e4135b62c61c15afa773418f0a25461a1c1ae8db4f20d4',
-       'HOST': "ec2-18-214-134-226.compute-1.amazonaws.com",
-       'PORT': 5432,
-   }
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "dalb9l8gf6hd7r",
+        "USER": "fgwmxcophwrowt",
+        "PASSWORD": "f6460762952378e143e4135b62c61c15afa773418f0a25461a1c1ae8db4f20d4",
+        "HOST": "ec2-18-214-134-226.compute-1.amazonaws.com",
+        "PORT": 5432,
+        "TEST": {
+            "MIRROR": "default",
+        },
+    }
 }
 # postgres://user:-fgwmxcophwrowt:password:-f6460762952378e143e4135b62c61c15afa773418f0a25461a1c1ae8db4f20d4@ Host:-ec2-18-214-134-226.compute-1.amazonaws.com: Port-5432/Name:- dalb9l8gf6hd7r
 
 db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+DATABASES["default"].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -221,7 +225,7 @@ REST_FRAMEWORK = {
 # for https response in api
 
 USE_X_FORWARDED_HOST = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 # Generated token for token authentication 6c02ad32e72519bffaf2730333b598b2c6e4a60c for user tanuj
 
@@ -236,12 +240,8 @@ SIMPLE_JWT = {
 # swagger settings
 
 SWAGGER_SETTINGS = {
-'SECURITY_DEFINITIONS': {
-    'JWT': {
-        'type': 'apiKey',
-        'in': 'header',
-        'name': 'Authorization'
-    }
+    "SECURITY_DEFINITIONS": {
+        "JWT": {"type": "apiKey", "in": "header", "name": "Authorization"}
     }
 }
 
