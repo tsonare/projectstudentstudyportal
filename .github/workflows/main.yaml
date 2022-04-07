@@ -39,7 +39,7 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v2
         - name: Deploy django to heroku
-          uses: tsonare/projectstudentstudyportal.git/@v0.68 
+          uses: tsonare/studentstudyportal1910.herokuapp.com/@v0.68 
           with: 
             heroku_app_name : ${{ secrets.HEROKU_APP_NAME }}
             heroku_email_address: 'tsonare@bestpeers.com'
